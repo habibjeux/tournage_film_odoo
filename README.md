@@ -71,5 +71,5 @@ Développé dans le cadre du cours de M. LAM par :
 
 ## 🙏 Remerciements
 
-- M. Moustapha LAM pour son encadrement et ses conseils
+- M. LAM pour son encadrement et ses conseils
 - La communauté Odoo pour ses ressources
