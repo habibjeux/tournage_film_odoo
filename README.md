@@ -2,7 +2,7 @@
 
 ## 📋 Description
 
-Ce module Odoo a été développé dans le cadre du cours de développement Odoo, dirigé par M. Moustapha LAM. Il permet de gérer l'ensemble du processus de production cinématographique de manière professionnelle et efficace.
+Ce module Odoo a été développé dans le cadre du cours de développement Odoo, dirigé par M. LAM. Il permet de gérer l'ensemble du processus de production cinématographique de manière professionnelle et efficace.
 
 ### 🎯 Objectif du Projet
 
@@ -62,7 +62,7 @@ git clone https://github.com/habibjeux/tournage_film_odoo /chemin/vers/addons/to
 
 ## 👥 Auteurs
 
-Développé dans le cadre du cours de M. Moustapha LAM par :
+Développé dans le cadre du cours de M. LAM par :
 
 - Assane DOUMBOUYA
 - Amy KANE
