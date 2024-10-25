@@ -13,29 +13,29 @@
         - Réalisateurs
     """,
 
-    'author': "HTTECH",
+    'sequence': 1,
 
-    # Categories can be used to filter modules in modules listing
-    # Check https://github.com/odoo/odoo/blob/master/odoo/addons/base/module/module_data.xml
-    # for the full list
+    'author': "Assane DOUMBOUYA, Amy KANE, Cheikhouna NDIAYE, Hayib TOURE",
     'category': 'Industries',
     'version': '1.0',
 
-    # any module necessary for this one to work correctly
     'depends': ['base'],
 
     # always loaded
     'data': [
-        # 'security/ir.model.access.csv',
-        'views/views.xml',
-        'views/templates.xml',
+        'security/ir.model.access.csv',
+        'views/film_views.xml',
+        'views/lieu_views.xml',
+        'views/societe_production_views.xml',
+        'views/tournage_views.xml',
+        'views/realisateur_views.xml',
+        'views/menu_views.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
-        'demo/demo.xml',
     ],
-    
+
     'installable': True,
     'application': True,
-    'auto_install': False,
+    'license': 'LGPL-3',
 }
