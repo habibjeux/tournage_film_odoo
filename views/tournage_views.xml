@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Vue de formulaire pour Tournage -->
+        <record id="view_tournage_form" model="ir.ui.view">
+            <field name="name">tournage_film.tournage.form</field>
+            <field name="model">tournage_film.tournage</field>
+            <field name="arch" type="xml">
+                <form string="Tournage">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="film_id"/>
+                            </group>
+                            <group>
+                                <field name="date_debut"/>
+                                <field name="date_fin"/>
+                                <field name="duree_tournage"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Vue de liste pour Tournage -->
+        <record id="view_tournage_tree" model="ir.ui.view">
+            <field name="name">tournage_film.tournage.tree</field>
+            <field name="model">tournage_film.tournage</field>
+            <field name="arch" type="xml">
+                <tree string="Tournages">
+                    <field name="name"/>
+                    <field name="film_id"/>
+                    <field name="date_debut"/>
+                    <field name="date_fin"/>
+                    <field name="duree_tournage"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Vue de recherche pour Tournage -->
+        <record id="view_tournage_search" model="ir.ui.view">
+            <field name="name">tournage_film.tournage.search</field>
+            <field name="model">tournage_film.tournage</field>
+            <field name="arch" type="xml">
+                <search string="Rechercher un tournage">
+                    <field name="name"/>
+                    <field name="film_id"/>
+                    <filter string="En cours" name="in_progress" 
+                            domain="[('date_debut', '&lt;=', context_today().strftime('%Y-%m-%d')), 
+                                    ('date_fin', '&gt;=', context_today().strftime('%Y-%m-%d'))]"/>
+                    <group expand="1" string="Group By">
+                        <filter string="Film" name="group_by_film" context="{'group_by':'film_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <!-- Action pour ouvrir la vue Tournage -->
+        <record id="action_tournage" model="ir.actions.act_window">
+            <field name="name">Tournages</field>
+            <field name="res_model">tournage_film.tournage</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Créer votre premier tournage
+                </p>
+            </field>
+        </record>
+    </data>
+</odoo>

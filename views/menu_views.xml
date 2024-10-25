@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Menu racine -->
+        <menuitem id="menu_tournage_film_root" 
+            name="Tournage de Films" 
+            sequence="10"/>
+
+        <!-- Sous-menus -->
+        <menuitem id="menu_tournage_film_film" 
+            name="Films" 
+            parent="menu_tournage_film_root" 
+            action="action_film" 
+            sequence="10"/>
+
+        <menuitem id="menu_tournage_film_tournage" 
+            name="Tournages" 
+            parent="menu_tournage_film_root" 
+            action="action_tournage" 
+            sequence="20"/>
+
+        <menuitem id="menu_tournage_film_realisateur" 
+            name="Réalisateurs" 
+            parent="menu_tournage_film_root" 
+            action="action_realisateur" 
+            sequence="30"/>
+
+        <menuitem id="menu_tournage_film_configuration" 
+            name="Configuration" 
+            parent="menu_tournage_film_root"
+            sequence="100"/>
+
+        <!-- Sous-menus de configuration -->
+        <menuitem id="menu_tournage_film_lieu" 
+            name="Lieux de tournage" 
+            parent="menu_tournage_film_configuration" 
+            action="action_lieu" 
+            sequence="10"/>
+
+        <menuitem id="menu_tournage_film_societe" 
+            name="Sociétés de production" 
+            parent="menu_tournage_film_configuration" 
+            action="action_societe_production" 
+            sequence="20"/>
+    </data>
+</odoo>

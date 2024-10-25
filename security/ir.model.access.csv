@@ -1,2 +1,6 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_my_module_my_module,my_module.my_module,model_my_module_my_module,,1,0,0,0
+access_tournage_film_film_user,tournage.film.user,model_tournage_film_film,base.group_user,1,1,1,1
+access_tournage_film_lieu_user,tournage.film.lieu.user,model_tournage_film_lieu,base.group_user,1,1,1,1
+access_tournage_film_societe_production_user,tournage.film.societe.production.user,model_tournage_film_societe_production,base.group_user,1,1,1,1
+access_tournage_film_tournage_user,tournage.film.tournage.user,model_tournage_film_tournage,base.group_user,1,1,1,1
+access_tournage_film_realisateur_user,tournage.film.realisateur.user,model_tournage_film_realisateur,base.group_user,1,1,1,1

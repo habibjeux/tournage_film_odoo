@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Vue de formulaire pour Film -->
+        <record id="view_film_form" model="ir.ui.view">
+            <field name="name">tournage_film.film.form</field>
+            <field name="model">tournage_film.film</field>
+            <field name="arch" type="xml">
+                <form string="Film">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="date_sortie"/>
+                            <field name="duree"/>
+                            <field name="realisateur_id"/>
+                            <field name="lieu_id"/>
+                            <field name="societe_production_id"/>
+                            <field name="type_film"/>
+                            <field name="taille"/>
+                            <field name="prix_vente"/>
+                        </group>
+                        <notebook>
+                            <page string="Tournages">
+                                <field name="tournage_ids"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Vue de liste pour Film -->
+        <record id="view_film_tree" model="ir.ui.view">
+            <field name="name">tournage_film.film.tree</field>
+            <field name="model">tournage_film.film</field>
+            <field name="arch" type="xml">
+                <tree string="Films">
+                    <field name="name"/>
+                    <field name="date_sortie"/>
+                    <field name="realisateur_id"/>
+                    <field name="type_film"/>
+                    <field name="prix_vente"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Vue de recherche pour Film -->
+        <record id="view_film_search" model="ir.ui.view">
+            <field name="name">tournage_film.film.search</field>
+            <field name="model">tournage_film.film</field>
+            <field name="arch" type="xml">
+                <search string="Rechercher un film">
+                    <field name="name"/>
+                    <field name="realisateur_id"/>
+                    <field name="type_film"/>
+                    <field name="societe_production_id"/>
+                    <group expand="1" string="Group By">
+                        <filter string="Réalisateur" name="group_by_realisateur" context="{'group_by':'realisateur_id'}"/>
+                        <filter string="Type de film" name="group_by_type" context="{'group_by':'type_film'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <!-- Action pour ouvrir la vue Film -->
+        <record id="action_film" model="ir.actions.act_window">
+            <field name="name">Films</field>
+            <field name="res_model">tournage_film.film</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Créer votre premier film
+                </p>
+            </field>
+        </record>
+    </data>
+</odoo>

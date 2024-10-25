@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Vue de formulaire pour Société de production -->
+        <record id="view_societe_production_form" model="ir.ui.view">
+            <field name="name">tournage_film.societe_production.form</field>
+            <field name="model">tournage_film.societe_production</field>
+            <field name="arch" type="xml">
+                <form string="Société de production">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="capital"/>
+                            <field name="nombre_films"/>
+                        </group>
+                        <notebook>
+                            <page string="Films produits">
+                                <field name="film_ids" readonly="1">
+                                    <tree>
+                                        <field name="name"/>
+                                        <field name="date_sortie"/>
+                                        <field name="realisateur_id"/>
+                                        <field name="prix_vente"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Vue de liste pour Société de production -->
+        <record id="view_societe_production_tree" model="ir.ui.view">
+            <field name="name">tournage_film.societe_production.tree</field>
+            <field name="model">tournage_film.societe_production</field>
+            <field name="arch" type="xml">
+                <tree string="Sociétés de production">
+                    <field name="name"/>
+                    <field name="capital"/>
+                    <field name="nombre_films"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Vue de recherche pour Société de production -->
+        <record id="view_societe_production_search" model="ir.ui.view">
+            <field name="name">tournage_film.societe_production.search</field>
+            <field name="model">tournage_film.societe_production</field>
+            <field name="arch" type="xml">
+                <search string="Rechercher une société">
+                    <field name="name"/>
+                    <filter string="Capital > 1M" name="high_capital" domain="[('capital', '>', 1000000)]"/>
+                </search>
+            </field>
+        </record>
+
+        <!-- Action pour ouvrir la vue Société de production -->
+        <record id="action_societe_production" model="ir.actions.act_window">
+            <field name="name">Sociétés de production</field>
+            <field name="res_model">tournage_film.societe_production</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Créer votre première société de production
+                </p>
+            </field>
+        </record>
+    </data>
+</odoo>

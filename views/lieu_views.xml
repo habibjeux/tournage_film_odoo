@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Vue de formulaire pour Lieu -->
+        <record id="view_lieu_form" model="ir.ui.view">
+            <field name="name">tournage_film.lieu.form</field>
+            <field name="model">tournage_film.lieu</field>
+            <field name="arch" type="xml">
+                <form string="Lieu de tournage">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="nombre_films"/>
+                        </group>
+                        <notebook>
+                            <page string="Films tournés">
+                                <field name="film_ids" readonly="1">
+                                    <tree>
+                                        <field name="name"/>
+                                        <field name="date_sortie"/>
+                                        <field name="realisateur_id"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Vue de liste pour Lieu -->
+        <record id="view_lieu_tree" model="ir.ui.view">
+            <field name="name">tournage_film.lieu.tree</field>
+            <field name="model">tournage_film.lieu</field>
+            <field name="arch" type="xml">
+                <tree string="Lieux de tournage">
+                    <field name="name"/>
+                    <field name="nombre_films"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Vue de recherche pour Lieu -->
+        <record id="view_lieu_search" model="ir.ui.view">
+            <field name="name">tournage_film.lieu.search</field>
+            <field name="model">tournage_film.lieu</field>
+            <field name="arch" type="xml">
+                <search string="Rechercher un lieu">
+                    <field name="name"/>
+                    <filter string="Lieux utilisés" name="used_locations" domain="[('nombre_films', '>', 0)]"/>
+                </search>
+            </field>
+        </record>
+
+        <!-- Action pour ouvrir la vue Lieu -->
+        <record id="action_lieu" model="ir.actions.act_window">
+            <field name="name">Lieux de tournage</field>
+            <field name="res_model">tournage_film.lieu</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Créer votre premier lieu de tournage
+                </p>
+            </field>
+        </record>
+    </data>
+</odoo>
